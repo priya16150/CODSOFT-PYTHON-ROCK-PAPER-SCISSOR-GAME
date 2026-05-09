@@ -56,24 +56,19 @@ def main():
     playing = True
 
     while playing:
-        # Get choices and determine winner
         user_choice = get_user_choice()
         computer_choice = random.choice(["rock", "paper", "scissors"])
         result = determine_winner(user_choice, computer_choice)
 
-        # Update scores
         if result == "win":
             user_score += 1
         elif result == "lose":
             computer_score += 1
 
-        # Display round outcome
         display_result(user_choice, computer_choice, result, user_score, computer_score)
 
-        # Ask to play again
         playing = play_again()
 
-    # Final goodbye message
     print("\n🏁 Game over! Final score:")
     print(f"   You: {user_score}  |  Computer: {computer_score}")
     print("Thanks for playing! 👋")
